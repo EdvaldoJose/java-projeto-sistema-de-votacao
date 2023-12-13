@@ -1,10 +1,10 @@
 package com.betrybe.sistemadevotacao;
 
+
+public class PessoaCandidata extends Pessoa {
 /**
  * The type Pessoa candidata.
  */
-public class PessoaCandidata extends Pessoa {
-
   private int numero;
   private int votos;
 
