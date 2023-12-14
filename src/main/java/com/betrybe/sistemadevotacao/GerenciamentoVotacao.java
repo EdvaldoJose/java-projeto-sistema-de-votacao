@@ -2,6 +2,9 @@ package com.betrybe.sistemadevotacao;
 
 import java.util.ArrayList;
 
+/**
+ * The type Gerenciamento votacao.
+ */
 public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
 
   private final ArrayList<PessoaCandidata> pessoasCandidatas = new ArrayList<>();
@@ -12,7 +15,8 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
   public void cadastrarPessoaCandidata(String nome, int numero) {
     for (PessoaCandidata pc : pessoasCandidatas) {
       if (pc.getNumero() == numero) {
-        System.out.println("Número da pessoa candidata já utilizado!");
+        System.out.print("Número da pessoa candidata já utilizado!");
+        return;
       }
     }
 
@@ -23,7 +27,8 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
   public void cadastrarPessoaEleitora(String nome, String cpf) {
     for (PessoaEleitora pe : pessoasEleitoras) {
       if (pe.getCpf() == cpf){
-        System.out.println("Pessoa eleitora já cadastrada!");
+        System.out.print("Pessoa eleitora já cadastrada!");
+        return;
       }
     }
 
@@ -34,7 +39,7 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
   public void votar(String cpfPessoaEleitora, int numeroPessoaCandidata) {
     for (String cpf : cpfsComputados) {
       if (cpf.equals(cpfPessoaEleitora)) {
-        System.out.println("Pessoa eleitora já votou!");
+        System.out.print("Pessoa eleitora já votou!");
         return;
       }
     }
@@ -47,13 +52,13 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
       }
     }
 
-    System.out.println("Pessoa eleitora ou pessoa candidata não encontrada!");
+    System.out.print("Pessoa eleitora ou pessoa candidata não encontrada!");
   }
 
   @Override
   public void mostrarResultado() {
     if (cpfsComputados.isEmpty()) {
-      System.out.println("É preciso ter pelo menos um voto para mostrar o resultado.");
+      System.out.print("É preciso ter pelo menos um voto para mostrar o resultado.");
     } else {
       for (PessoaCandidata pc : pessoasCandidatas){
         System.out.println(
