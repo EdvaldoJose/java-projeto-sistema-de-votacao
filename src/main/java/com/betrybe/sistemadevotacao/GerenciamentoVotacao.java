@@ -26,7 +26,7 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
   @Override
   public void cadastrarPessoaEleitora(String nome, String cpf) {
     for (PessoaEleitora pe : pessoasEleitoras) {
-      if (pe.getCpf() == cpf){
+      if (pe.getCpf() == cpf) {
         System.out.print("Pessoa eleitora já cadastrada!");
         return;
       }
@@ -60,11 +60,11 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
     if (cpfsComputados.isEmpty()) {
       System.out.print("É preciso ter pelo menos um voto para mostrar o resultado.");
     } else {
-      for (PessoaCandidata pc : pessoasCandidatas){
+      for (PessoaCandidata pc : pessoasCandidatas) {
         System.out.println(
-            "Nome: " + pc.getNome() +
-                " - " + pc.getVotos() + " votos " +
-                "( " + (pc.getVotos() * 100 / cpfsComputados.size()) + "%)"
+            "Nome: " + pc.getNome()
+                + " - " + pc.getVotos() + " votos "
+                + "( " + (pc.getVotos() * 100 / cpfsComputados.size()) + "%)"
         );
       }
 
